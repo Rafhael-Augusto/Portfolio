@@ -1,17 +1,17 @@
 import { useInView } from "@/hooks/useInView";
 
+import { BBH_Sans_Hegarty } from "next/font/google";
+
 import { SiGmail } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-
-import { BBH_Sans_Hegarty } from "next/font/google";
 
 const smooch_sans = BBH_Sans_Hegarty({
   subsets: ["latin"],
   weight: ["400", "400"],
 });
 
-export default function Contact() {
+export function Contact() {
   const { ref, isVisible } = useInView<HTMLDivElement>({
     threshold: 0.4,
   });

@@ -1,16 +1,17 @@
 "use client";
 
 import { useMenu } from "@/store/useMenu";
-import { Button } from "../ui/button";
 
 import { Smooch_Sans } from "next/font/google";
+
+import { Button } from "@/components/ui/button";
 
 const smooch_sans = Smooch_Sans({
   subsets: ["latin"],
   weight: ["600", "800"],
 });
 
-export default function Menu() {
+export function Menu() {
   const year = new Date().getFullYear();
   const { value } = useMenu();
 

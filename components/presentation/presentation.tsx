@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
-import { BBH_Sans_Hegarty } from "next/font/google";
+
 import { useMenu } from "@/store/useMenu";
+
+import { BBH_Sans_Hegarty } from "next/font/google";
 
 const smooch_sans = BBH_Sans_Hegarty({
   subsets: ["latin"],
   weight: ["400", "400"],
 });
 
-export default function Presentation() {
+export function Presentation() {
   const [size, setSize] = useState(6);
   const { value, updateValue } = useMenu();
 

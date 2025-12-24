@@ -1,16 +1,16 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+
 import { useMenu } from "@/store/useMenu";
 
 import { ReactLenis } from "lenis/react";
-
-import Menu from "@/components/menu/menu";
-import Presentation from "@/components/presentation/presentation";
-import Projects from "@/components/projects/projects";
-import Experiences from "@/components/experiences/experiences";
-import Contact from "@/components/contact/contact";
-import About from "@/components/about/about";
+import { Menu } from "@/components/menu/menu";
+import { Presentation } from "@/components/presentation/presentation";
+import { About } from "@/components/about/about";
+import { Experiences } from "@/components/experiences/experiences";
+import { Projects } from "@/components/projects/projects";
+import { Contact } from "@/components/contact/contact";
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement | null>(null);

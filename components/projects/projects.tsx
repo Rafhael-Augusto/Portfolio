@@ -1,13 +1,70 @@
-import { BBH_Sans_Hegarty } from "next/font/google";
 import { useInView } from "@/hooks/useInView";
-import Project from "../project/project";
+
+import { BBH_Sans_Hegarty } from "next/font/google";
+
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { TbBrandThreejs } from "react-icons/tb";
+import { FaReact } from "react-icons/fa";
+import { BiLogoTypescript } from "react-icons/bi";
+import { PiMouseScrollFill } from "react-icons/pi";
+import { LuPackageSearch } from "react-icons/lu";
+import { Project } from "../project/project";
 
 const smooch_sans = BBH_Sans_Hegarty({
   subsets: ["latin"],
   weight: ["400", "400"],
 });
 
-export default function Projects() {
+const projects = [
+  {
+    title: "Project title",
+    desc: "Project description",
+    video: "/background.mp4",
+    links: [
+      {
+        name: "Github",
+        link: "https://github.com/Rafhael-Augusto/Portfolio",
+      },
+      {
+        name: "Vercel",
+        link: "https://github.com/Rafhael-Augusto/Portfolio",
+      },
+    ],
+    tools: [
+      {
+        icon: <RiNextjsFill />,
+        name: "Next.js",
+      },
+      {
+        icon: <FaReact />,
+        name: "React",
+      },
+      {
+        icon: <BiLogoTypescript />,
+        name: "TypeScript",
+      },
+      {
+        icon: <RiTailwindCssFill />,
+        name: "Tailwind CSS",
+      },
+      {
+        icon: <TbBrandThreejs />,
+        name: "Three.js",
+      },
+
+      {
+        icon: <LuPackageSearch />,
+        name: "Zustand",
+      },
+      {
+        icon: <PiMouseScrollFill />,
+        name: "Lenis",
+      },
+    ],
+  },
+];
+
+export function Projects() {
   const { ref, isVisible } = useInView<HTMLDivElement>({
     threshold: 0.4,
   });
@@ -27,7 +84,9 @@ export default function Projects() {
         </h2>
 
         <div className="h-full w-full ">
-          <Project />
+          {projects.map((project) => (
+            <Project key={project.title} data={project} />
+          ))}
         </div>
       </div>
     </div>

@@ -1,9 +1,15 @@
-import { Canvas, useFrame } from "@react-three/fiber";
-import { useGLTF, useAnimations, Environment } from "@react-three/drei";
 import { useRef, useEffect } from "react";
-import * as THREE from "three";
+
 import { useInView } from "@/hooks/useInView";
-import { OrbitControls } from "@react-three/drei";
+
+import * as THREE from "three";
+import { Canvas, useFrame } from "@react-three/fiber";
+import {
+  OrbitControls,
+  useGLTF,
+  useAnimations,
+  Environment,
+} from "@react-three/drei";
 
 interface props {
   isVisible: boolean;
@@ -43,7 +49,7 @@ function LaptopModel({ isVisible }: props) {
   );
 }
 
-export default function Laptop() {
+export function Laptop() {
   const { ref, isVisible } = useInView<HTMLDivElement>({
     threshold: 0.6,
   });

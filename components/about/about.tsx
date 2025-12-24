@@ -1,13 +1,14 @@
 import { useInView } from "@/hooks/useInView";
-import Laptop from "../renders/laptop/laptop";
+
 import { BBH_Sans_Hegarty } from "next/font/google";
+import { Laptop } from "../renders/laptop/laptop";
 
 const smooch_sans = BBH_Sans_Hegarty({
   subsets: ["latin"],
   weight: ["400", "400"],
 });
 
-export default function About() {
+export function About() {
   const { ref, isVisible } = useInView<HTMLDivElement>({
     threshold: 0.6,
   });

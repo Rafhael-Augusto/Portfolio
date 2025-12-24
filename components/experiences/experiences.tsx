@@ -1,4 +1,5 @@
 import { useInView } from "@/hooks/useInView";
+
 import { BBH_Sans_Hegarty } from "next/font/google";
 
 const smooch_sans = BBH_Sans_Hegarty({
@@ -6,7 +7,7 @@ const smooch_sans = BBH_Sans_Hegarty({
   weight: ["400", "400"],
 });
 
-export default function Experiences() {
+export function Experiences() {
   const { ref, isVisible } = useInView<HTMLDivElement>({
     threshold: 0.4,
   });
